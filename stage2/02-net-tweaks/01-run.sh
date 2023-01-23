@@ -1,11 +1,22 @@
 #!/bin/bash -e
 
-install -v -d					"${ROOTFS_DIR}/etc/systemd/system/dhcpcd.service.d"
-install -v -m 644 files/wait.conf		"${ROOTFS_DIR}/etc/systemd/system/dhcpcd.service.d/"
+install -v -d "${ROOTFS_DIR}/etc/systemd/system/dhcpcd.service.d"
 
 on_chroot << EOF
 	SUDO_USER="${FIRST_USER_NAME}" raspi-config nonint do_boot_wait 0
 	SUDO_USER="${FIRST_USER_NAME}" raspi-config nonint do_netconf 1
+
+	# https://github.com/RPi-Distro/raspi-config/blob/0fc1f9552fc99332d57e3b6df20c64576466913a/raspi-config#L2102
+	ENABLE_SERVICE=NetworkManager
+	DISABLE_SERVICE=dhcpcd
+
+	systemctl -q disable "$DISABLE_SERVICE" 2> /dev/null
+	systemctl -q enable "$ENABLE_SERVICE"
+	if [ "$INIT" = "systemd" ]; then
+	systemctl -q stop "$DISABLE_SERVICE" 2> /dev/null
+	systemctl -q --no-block start "$ENABLE_SERVICE"
+	fi
+
 EOF
 
 if [ -v WPA_COUNTRY ]; then
@@ -38,3 +49,5 @@ else
     echo 1 > "${ROOTFS_DIR}/var/lib/systemd/rfkill/platform-3f300000.mmcnr:wlan"
     echo 1 > "${ROOTFS_DIR}/var/lib/systemd/rfkill/platform-fe300000.mmcnr:wlan"
 fi
+
+
