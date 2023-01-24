@@ -9,4 +9,4 @@ TIMEZONE_DEFAULT=America/Los_Angeles
 DEPLOY_ZIP=0
 PRESERVE_CONTAINER=0
 CONTINUE=0
-PHOTONVISION_JAR_URL=https://github.com/PhotonVision/photonvision/releases/download/v2023.1.1-beta-7/photonvision-v2023.1.1-beta-7-linuxarm64.jar
+PHOTONVISION_JAR_URL=https://github.com/PhotonVision/photonvision/releases/download/v2023.2.1/photonvision-v2023.2.1-linuxarm64.jar
