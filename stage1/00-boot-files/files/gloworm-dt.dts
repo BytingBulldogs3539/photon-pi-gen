@@ -367,5 +367,241 @@
 				};
 			};
 		};
+
+		pins_cm4 {
+
+			pin_config {
+
+				pin@default {
+					polarity = "active_high";
+					termination = "pull_down";
+					startup_state = "inactive";
+					function = "input";
+				};
+
+				pin@p14 {
+					function = "uart0";
+					termination = "no_pulling";
+					drive_strength_mA = <0x8>;
+				};
+
+				pin@p15 {
+					function = "uart0";
+					termination = "pull_up";
+					drive_strength_mA = <0x8>;
+				};
+
+				pin@p46 {
+					function = "input";
+					termination = "pull_up";
+				};
+
+				pin@p47 {
+					function = "input";
+					termination = "pull_up";
+				};
+
+				pin@p48 {
+					function = "sdcard";
+					termination = "pull_up";
+					drive_strength_mA = <0x8>;
+				};
+
+				pin@p49 {
+					function = "sdcard";
+					termination = "pull_up";
+					drive_strength_mA = <0x8>;
+				};
+
+				pin@p50 {
+					function = "sdcard";
+					termination = "pull_up";
+					drive_strength_mA = <0x8>;
+				};
+
+				pin@p51 {
+					function = "sdcard";
+					termination = "pull_up";
+					drive_strength_mA = <0x8>;
+				};
+
+				pin@p52 {
+					function = "sdcard";
+					termination = "pull_up";
+					drive_strength_mA = <0x8>;
+				};
+
+				pin@p53 {
+					function = "sdcard";
+					termination = "pull_up";
+					drive_strength_mA = <0x8>;
+				};
+
+				pin@p128 {
+					function = "output";
+					termination = "no_pulling";
+				};
+
+				pin@p129 {
+					function = "output";
+					termination = "no_pulling";
+				};
+
+				pin@p130 {
+					function = "output";
+					termination = "no_pulling";
+					polarity = "active_low";
+					startup_state = "active";
+				};
+
+				pin@p131 {
+					function = "output";
+					termination = "no_pulling";
+				};
+
+				pin@p132 {
+					function = "output";
+					termination = "no_pulling";
+				};
+
+				pin@p133 {
+					function = "output";
+					termination = "no_pulling";
+				};
+
+				pin@p134 {
+					function = "output";
+					termination = "no_pulling";
+					startup_state = "active";
+				};
+
+				pin@p135 {
+					function = "output";
+					termination = "no_pulling";
+				};
+			};
+
+			pin_defines {
+
+				pin_define@HDMI_CONTROL_ATTACHED {
+					type = "external";
+					number = <0x0>;
+				};
+
+				pin_define@EMMC_ENABLE {
+					type = "external";
+					number = <0x1>;
+				};
+
+				pin_define@NUM_CAMERAS {
+					type = "internal";
+					number = <0x1>;
+				};
+
+				pin_define@POWER_LOW {
+					type = "absent";
+				};
+
+				pin_define@LEDS_DISK_ACTIVITY {
+					type = "absent";
+				};
+
+				pin_define@LAN_RUN {
+					type = "absent";
+				};
+
+				pin_define@BT_ON {
+					type = "external";
+					number = <0x0>;
+				};
+
+				pin_define@WL_ON {
+					type = "external";
+					number = <0x1>;
+				};
+
+				pin_define@SMPS_SDA {
+					type = "internal";
+					number = <0x2e>;
+				};
+
+				pin_define@SMPS_SCL {
+					type = "internal";
+					number = <0x2f>;
+				};
+
+				pin_define@ETH_CLK {
+					type = "absent";
+				};
+
+				pin_define@WL_LPO_CLK {
+					type = "absent";
+				};
+
+				pin_define@USB_LIMIT_1A2 {
+					type = "absent";
+				};
+
+				pin_define@SIO_1V8_SEL {
+					type = "absent";
+				};
+
+				pin_define@PWML {
+					type = "absent";
+				};
+
+				pin_define@PWMR {
+					type = "absent";
+				};
+
+				pin_define@SAFE_MODE {
+					type = "absent";
+				};
+
+				pin_define@SD_CARD_DETECT {
+					type = "absent";
+				};
+
+				pin_define@ID_SDA {
+					type = "internal";
+					number = <0x0>;
+				};
+
+				pin_define@ID_SCL {
+					type = "internal";
+					number = <0x1>;
+				};
+
+				pin_define@CAMERA_0_I2C_PORT {
+					type = "internal";
+					number = <0x0>;
+				};
+
+				pin_define@CAMERA_0_SDA_PIN {
+					type = "internal";
+					number = <0x2c>;
+				};
+
+				pin_define@CAMERA_0_SCL_PIN {
+					type = "internal";
+					number = <0x2d>;
+				};
+
+				pin_define@CAMERA_0_SHUTDOWN {
+					type = "external";
+					number = <0x5>;
+				};
+
+				pin_define@CAMERA_0_UNICAM_PORT {
+					type = "internal";
+					number = <0x1>;
+				};
+
+				pin_define@CAMERA_0_LED {
+					type = "absent";
+				};
+			};
+		};
+
 	};
 };
