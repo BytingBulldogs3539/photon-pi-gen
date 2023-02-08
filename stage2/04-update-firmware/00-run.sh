@@ -5,7 +5,8 @@ echo "Cleaning up extra packages and stuff"
 on_chroot << EOF
 
 apt purge -y 'x11-*'
-rm /boot/start_db.elf /boot/start4db.elf /boot/start4x.elf /boot/start4cd.elf /boot/start_cd.elf
+# db = debug, cd = cut-down, nothign is basic, x is camera drivers/video stuff
+rm /boot/start_db.elf /boot/start4db.elf /boot/start4cd.elf /boot/start_cd.elf
 rm -rf /opt/vc
 rm -rf /boot.bak
 
