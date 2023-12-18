@@ -34,7 +34,7 @@ unzip zip p7zip-full
 file
 kms++-utils
 pigpiod pigpio
-openjdk-11-jdk-headless
+openjdk-17-jdk-headless
 libtbb2
 git
 libegl1 
